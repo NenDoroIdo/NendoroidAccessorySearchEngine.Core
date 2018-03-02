@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="EmguCV" Version="3.1.0.1" />
+    <PackageReference Include="EMGU.CV" Version="3.3.0.2824" />
   </ItemGroup>
 
 </Project>
