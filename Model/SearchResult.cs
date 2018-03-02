@@ -33,5 +33,10 @@ namespace NendoroidAccessorySearchEngine.Core.Model
         /// introduce url
         /// </summary>
         public string IntroduceUrl { get; set; }
+
+        /// <summary>
+        /// uploader name
+        /// </summary>
+        public string UploaderName { get; set; }
     }
 }

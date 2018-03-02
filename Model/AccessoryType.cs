@@ -7,8 +7,14 @@ namespace NendoroidAccessorySearchEngine.Core.Model
     /// <summary>
     /// accessory type
     /// </summary>
-    public class AccessoryType
+    public enum AccessoryType
     {
-
+        Head,
+        Body,
+        LeftHand,
+        RightHand,
+        LeftFeet,
+        RightFeet,
+        Other,
     }
 }
