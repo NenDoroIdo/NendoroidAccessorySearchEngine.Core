@@ -3,11 +3,7 @@ using Emgu.CV.Features2D;
 using Emgu.CV.Structure;
 using Emgu.CV.Util;
 using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Emgu.CV.CvEnum;
 
 namespace test10
 {
@@ -23,13 +19,20 @@ namespace test10
 
         //建構
         //把圖片調成希望的大小附近
-        public ImagePrecess(Bitmap bitmapImage,int expectWidth=320, int expectHeight = 240)
+        public ImagePrecess(string bitmapImage,int expectWidth=320, int expectHeight = 240)
         {
+            //開始處理
+            _modelImage = new Image<Gray, Byte>(0,10);
+            ProcessImage(_modelImage);
+
+            /*
             //長+寬的倍率去換算 
             float rate = (float)(expectWidth + expectHeight) / (float)(bitmapImage.Width + bitmapImage.Height);
             int width = (int)(bitmapImage.Width * rate);
             int height = (int)(bitmapImage.Height * rate);
+
             //建立新的壓縮圖片
+
             Bitmap resizedbitmap = new Bitmap(width, height);
             Graphics g = Graphics.FromImage(resizedbitmap);
             g.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.High;
@@ -40,12 +43,17 @@ namespace test10
             //開始處理
             _modelImage = new Image<Gray, byte>(resizedbitmap);
             ProcessImage(_modelImage);
+            */
         }
 
         //建構
-        public ImagePrecess(Bitmap bitmapImage)
+        public ImagePrecess(string bitmapImage)
         {
-            _modelImage = new Image<Gray, byte>(bitmapImage);
+            //Mat mat = new Mat();
+            //mat.ToImage<Bgr, Byte>();
+
+            IntPtr inputImage = CvInvoke.cvLoadImage("C:\\Users\\...\\ClassPic1.jpg", LOAD_IMAGE_TYPE.CV_LOAD_IMAGE_COLOR);
+            _modelImage = new Image<Gray, byte>(10,10);
             ProcessImage(_modelImage);
         }
 

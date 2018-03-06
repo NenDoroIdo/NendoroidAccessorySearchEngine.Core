@@ -10,7 +10,7 @@ using Emgu.CV.Util;
 using Emgu.CV.Features2D;
 using System.Diagnostics;
 using System.Drawing;
-using System.Windows.Forms;
+using test10.Class.FindMatch;
 
 namespace test10
 {
@@ -103,7 +103,7 @@ namespace test10
                new PointF(rect.Right, rect.Top),
                new PointF(rect.Left, rect.Top)};
                 homography.ProjectPoints(pts);
-                MessageBox.Show("width : " + rect.Right + "height : " + rect.Bottom + "\n" + pts.Length + "Up : " + pts[0].X + "," + pts[0].Y + "\n Down : " + "Up : " + pts[1].X + "," + pts[1].Y + "\n Left : " + "Up : " + pts[2].X + "," + pts[2].Y + "\n right : " + "Up : " + pts[3].X + "," + pts[3].Y);
+                Console.WriteLine("width : " + rect.Right + "height : " + rect.Bottom + "\n" + pts.Length + "Up : " + pts[0].X + "," + pts[0].Y + "\n Down : " + "Up : " + pts[1].X + "," + pts[1].Y + "\n Left : " + "Up : " + pts[2].X + "," + pts[2].Y + "\n right : " + "Up : " + pts[3].X + "," + pts[3].Y);
                 result.DrawPolyline(Array.ConvertAll<PointF, Point>(pts, Point.Round), true, new Bgr(Color.Red), 5);
             }
             #endregion
@@ -154,7 +154,7 @@ namespace test10
         }
 
         //去計算出 HomographyMatrix 裡面對應形狀的大小是不是
-        static bool HomographySizeIsLegal(HomographyMatrix homography, int width, int height)
+        public bool HomographySizeIsLegal(HomographyMatrix homography, int width, int height)
         {
             int Top = 0;
             int Bottom = height;
@@ -164,7 +164,7 @@ namespace test10
             //把矩陣去做轉換
             homography.ProjectPoints(pts);
             //計算是不是正方形
-            Class.FindMatch.CheckRectangle check = new Class.FindMatch.CheckRectangle(pts);
+            CheckRectangle check = new CheckRectangle(pts);
             //至少要是正方形形狀而且大於最小邊
             if (check.CheckMinBorder(width / 5, height/5)) //小圖片裡面至少要有一半的內容在大圖片裡
             {
@@ -172,7 +172,7 @@ namespace test10
                 {
                     if (check.CheckShape(1.5))
                     {
-                        MessageBox.Show("width : " + width + "height : " + height + "\n" + pts.Length + "Up : " + pts[0].X + "," + pts[0].Y + "\n Down : " + "Up : " + pts[1].X + "," + pts[1].Y + "\n Left : " + "Up : " + pts[2].X + "," + pts[2].Y + "\n right : " + "Up : " + pts[3].X + "," + pts[3].Y);
+                        Console.WriteLine("width : " + width + "height : " + height + "\n" + pts.Length + "Up : " + pts[0].X + "," + pts[0].Y + "\n Down : " + "Up : " + pts[1].X + "," + pts[1].Y + "\n Left : " + "Up : " + pts[2].X + "," + pts[2].Y + "\n right : " + "Up : " + pts[3].X + "," + pts[3].Y);
                         return true;
                     }
                 }
@@ -234,7 +234,7 @@ namespace test10
             if (homography != null)
             {  //draw a rectangle along the projected model
                 //表示有對比到結過
-                System.Windows.Forms.MessageBox.Show("Match! ");
+                Console.WriteLine("Match! ");
                 Rectangle rect = modelImage.ROI;
                 PointF[] pts = new PointF[] {
                new PointF(rect.Left, rect.Bottom),

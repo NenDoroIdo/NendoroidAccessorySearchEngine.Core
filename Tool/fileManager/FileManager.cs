@@ -7,7 +7,6 @@ using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace test10.Class.fileManager
 {
@@ -47,11 +46,13 @@ namespace test10.Class.fileManager
             return rootFolder + "/" + folderName+"/"+ ImagePath + imageFileFormat;
         }
 
+        /*
         //取得圖片
         public static Bitmap GetBookImage(string folderName, string ImagePath)
         {
             return new Bitmap(GetImagePath(folderName, ImagePath));
         }
+        */
 
         
         //取得書本的list
@@ -69,7 +70,7 @@ namespace test10.Class.fileManager
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                Console.WriteLine(ex.Message);
             }
 
             return obj;
@@ -92,7 +93,7 @@ namespace test10.Class.fileManager
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                Console.WriteLine(ex.Message);
                 return false;
             }
             
@@ -105,6 +106,7 @@ namespace test10.Class.fileManager
             return str[str.Length - 1];
         }
 
+        /*
         //把圖形存成image
         public static void SaveImageToFile(Image image,string folderName, string ImagePath)
         {
@@ -139,6 +141,6 @@ namespace test10.Class.fileManager
             //    bitmap.Save(GetImagePath(folderName, ImagePath), System.Drawing.Imaging.ImageFormat.Png);
             //}
         }
-
+        */
     }
 }
