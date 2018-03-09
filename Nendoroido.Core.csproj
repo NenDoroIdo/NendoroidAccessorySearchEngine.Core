@@ -10,7 +10,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="EmguCV" Version="3.1.0.1" />
+    <PackageReference Include="VDK.EmguCV.x64" Version="2.4.10.1" />
   </ItemGroup>
 
 </Project>
