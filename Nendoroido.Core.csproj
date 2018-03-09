@@ -1,7 +1,12 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFrameworks>netstandard1.4;netstandard2.0</TargetFrameworks>
+
+    <!--For UWP support-->
+    <PackageTargetFallback>
+      $(PackageTargetFallback);portable-net45+win8+wpa81+wp8
+    </PackageTargetFallback>
   </PropertyGroup>
 
   <ItemGroup>
