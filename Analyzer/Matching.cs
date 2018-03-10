@@ -14,16 +14,18 @@ using test10.Class.FindMatch;
 
 namespace test10
 {
-    //對比是不是一樣的class
+    /// <summary>
+    /// 圖片轉換和掃描
+    /// 參考 : 
+    /// http://www.emgu.com/wiki/index.php/SURF_feature_detector_in_CSharp
+    /// http://www.pudn.com/Download/item/id/2659035.html
+    /// </summary>
     class Matching
     {
         public Matching() 
         {
 
         }
-
-        
-
 
         //主要是在這端對比的
         public  void FindMatch(Image<Gray, Byte> modelImage, Image<Gray, byte> observedImage, out long matchTime, out VectorOfKeyPoint modelKeyPoints,
