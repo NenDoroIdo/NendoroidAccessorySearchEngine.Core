@@ -24,7 +24,7 @@ namespace Nendoroido.Core.Test
         /// <param name="observedImage">The observed image</param>
         /// <param name="matchTime">The output total time for computing the homography matrix.</param>
         /// <returns>The model image and observed image, the matched features and homography projection.</returns>
-        public static Image<Bgr, Byte> Draw(Image<Gray, Byte> modelImage, Image<Gray, byte> observedImage, out long matchTime)
+        public static Image<Gray, Byte> Draw(Image<Gray, Byte> modelImage, Image<Gray, byte> observedImage, out long matchTime)
         {
             Stopwatch watch;
             HomographyMatrix homography = null;
@@ -147,7 +147,9 @@ namespace Nendoroido.Core.Test
 
             matchTime = watch.ElapsedMilliseconds;
 
-            return result;
+            return null;
+
+            //return result;
         }
     }
 }

@@ -28,7 +28,7 @@ namespace NendoroidAccessorySearchEngine.Core
         }
 
         //throw the image into here, and get the result
-        public async Task<List<SearchResult>> Search()
+        public Task<List<SearchResult>> Search()
         {
             return null;
         }
