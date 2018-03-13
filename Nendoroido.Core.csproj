@@ -4,4 +4,15 @@
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="portable.accord.core" Version="3.0.2.60302" />
+    <PackageReference Include="portable.accord.imaging" Version="3.0.2.60302" />
+    <PackageReference Include="portable.accord.machinelearning" Version="3.0.2.60302" />
+    <PackageReference Include="portable.accord.math" Version="3.0.2.60302" />
+    <PackageReference Include="portable.accord.statistics" Version="3.0.2.60302" />
+    <PackageReference Include="portable.accord.vision" Version="3.0.2.60302" />
+    <PackageReference Include="shim" Version="2.0.1" />
+    <PackageReference Include="shim.drawing" Version="3.0.1" />
+  </ItemGroup>
+
 </Project>
