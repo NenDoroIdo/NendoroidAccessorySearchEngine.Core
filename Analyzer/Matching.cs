@@ -3,11 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Emgu.CV;
-using Emgu.Util;
-using Emgu.CV.Structure;
-using Emgu.CV.Util;
-using Emgu.CV.Features2D;
 using System.Diagnostics;
 using System.Drawing;
 using test10.Class.FindMatch;
@@ -22,6 +17,7 @@ namespace test10
     /// </summary>
     class Matching
     {
+        /*
         public Matching() 
         {
 
@@ -251,7 +247,7 @@ namespace test10
             return result;
         }
 
-
+        */
 
     }
 }
